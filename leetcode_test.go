@@ -1,6 +1,7 @@
 package leetcode
 
 import (
+	"reflect"
 	"testing"
 
 	"github.com/stretchr/testify/require"
@@ -31,4 +32,35 @@ func TestMaxProduct(t *testing.T) {
 func TestTotalMoney(t *testing.T) {
 	v := totalMoney(10)
 	require.EqualValues(t, v, 37)
+}
+
+func TestMoveZeroes(t *testing.T) {
+	var data = []struct {
+		array  []int
+		answer []int
+	}{
+		{
+			array:  []int{0, 1, 0},
+			answer: []int{1, 0, 0},
+		},
+		{
+			array:  []int{0, 1, 0, 3, 12},
+			answer: []int{1, 3, 12, 0, 0},
+		},
+
+		{
+			array:  []int{4, 2, 4, 0, 0, 3, 0, 5, 1, 0},
+			answer: []int{4, 2, 4, 3, 5, 1, 0, 0, 0, 0},
+		},
+	}
+
+	for _, v := range data {
+		moveZeroes(v.array)
+		require.EqualValues(t, reflect.DeepEqual(v.answer, v.array), true, v.array)
+	}
+}
+
+func TestMaxProfit(t *testing.T) {
+	s := maxProfit([]int{7, 1, 5, 3, 6, 4})
+	require.EqualValues(t, s, 5)
 }
