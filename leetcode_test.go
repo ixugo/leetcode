@@ -1,6 +1,7 @@
 package leetcode
 
 import (
+	"fmt"
 	"reflect"
 	"testing"
 
@@ -63,4 +64,8 @@ func TestMoveZeroes(t *testing.T) {
 func TestMaxProfit(t *testing.T) {
 	s := maxProfit([]int{7, 1, 5, 3, 6, 4})
 	require.EqualValues(t, s, 5)
+}
+
+func TestIsValid(t *testing.T) {
+	fmt.Println(isValid("()"))
 }
