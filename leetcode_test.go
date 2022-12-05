@@ -69,3 +69,9 @@ func TestMaxProfit(t *testing.T) {
 func TestIsValid(t *testing.T) {
 	fmt.Println(isValid("()"))
 }
+
+func TestFirstUniqChar(t *testing.T) {
+	i := firstUniqChar("leetocode")
+	require.EqualValues(t, i, "0")
+
+}
